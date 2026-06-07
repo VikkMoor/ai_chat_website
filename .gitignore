@@ -1,0 +1,11 @@
+.venv/
+
+**pycache**/
+*.pyc
+
+.env
+
+credentials.json
+
+.vscode/
+.idea/

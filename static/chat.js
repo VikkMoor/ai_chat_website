@@ -42,3 +42,10 @@ sendButton.addEventListener("click", async () => {
 
     addMessage(data.reply, "assistant");
 });
+
+
+messageInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        sendButton.click();
+    }
+});

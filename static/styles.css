@@ -1,15 +1,32 @@
 body {
     font-family: Arial, sans-serif;
     margin: 40px;
-    background-color: #f4f4f4;
+
+    background-color: #0b0f0d;
+    color: #e8f5ee;
 }
 
 header {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 h1 {
     margin-bottom: 10px;
+
+    color: #6dff9f;
+
+    text-shadow:
+        0 0 10px rgba(109,255,159,0.5),
+        0 0 20px rgba(109,255,159,0.2);
+}
+
+h2 {
+    color: #a9ffca;
+}
+
+p,
+li {
+    color: #c7d4cc;
 }
 
 #chat-widget {
@@ -20,47 +37,125 @@ h1 {
     width: 350px;
     height: 500px;
 
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+    background: #151b18;
+
+    border: 1px solid #2cff88;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 0 20px rgba(44,255,136,0.25);
 
     display: flex;
     flex-direction: column;
+
+    overflow: hidden;
 }
 
 #chat-header {
     padding: 15px;
+
     font-weight: bold;
-    border-bottom: 1px solid #ddd;
+
+    color: #6dff9f;
+
+    background: #101512;
+
+    border-bottom: 1px solid #2cff88;
 }
 
 #chat-messages {
     flex: 1;
-    padding: 10px;
+
+    padding: 12px;
+
     overflow-y: auto;
 }
 
 #chat-input-area {
     display: flex;
+
     gap: 10px;
-    padding: 10px;
-    border-top: 1px solid #ddd;
+
+    padding: 12px;
+
+    border-top: 1px solid #2b3630;
+
+    background: #101512;
 }
 
 #message-input {
     flex: 1;
+
+    padding: 10px;
+
+    border-radius: 10px;
+
+    border: 1px solid #2b3630;
+
+    background: #1b2320;
+
+    color: white;
+
+    outline: none;
+}
+
+#message-input:focus {
+    border-color: #2cff88;
+
+    box-shadow:
+        0 0 10px rgba(44,255,136,0.3);
+}
+
+button {
+    padding: 10px 16px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    background: #2cff88;
+
+    color: #08110c;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 0 12px rgba(44,255,136,0.5);
 }
 
 .user {
-    background: #d4ffd4;
-    padding: 8px;
-    margin-bottom: 8px;
-    border-radius: 8px;
+    background: #204f33;
+
+    color: white;
+
+    padding: 10px;
+
+    margin-bottom: 10px;
+
+    border-radius: 12px;
+
+    margin-left: 40px;
 }
 
 .assistant {
-    background: #e9e9e9;
-    padding: 8px;
-    margin-bottom: 8px;
-    border-radius: 8px;
+    background: #232a27;
+
+    color: #e8f5ee;
+
+    padding: 10px;
+
+    margin-bottom: 10px;
+
+    border-radius: 12px;
+
+    margin-right: 40px;
 }

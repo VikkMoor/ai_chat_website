@@ -3,6 +3,10 @@ import config
 from flask import Flask, render_template, request, jsonify, session
 import ai_logic
 
+import sheets
+
+from datetime import datetime
+
 app = Flask(__name__)
 app.secret_key = config.FLASK_SECRET_KEY
 
@@ -26,6 +30,27 @@ def chat_message():
     })
 
     reply = ai_logic.get_ai_reply(history)
+
+
+    if "[COMPLETE]" in reply:
+
+        order_data = ai_logic.extract_order(history)
+
+        order_data["created_at"] = datetime.now().strftime(
+            "%Y-%m-%d %H:%M:%S"
+        )
+
+        order_data["source"] = "website"
+
+        sheets.save_order(order_data)
+
+        session["history"] = []
+
+        reply = (
+            "Спасибо! Ваш заказ успешно оформлен.\n"
+            "Мы свяжемся с вами в ближайшее время."
+        )
+
 
     history.append({
         "role": "assistant",

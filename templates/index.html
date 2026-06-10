@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}?v=2">
+</head>
+<body>
+
+    <header>
+        <h1><h1>TechStore AI</h1></h1>
+        <p>Получите консультацию по внедрению искусственного интеллекта.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Чем мы помогаем</h2>
+
+            <ul>
+                <li>Автоматизация процессов</li>
+                <li>AI-ассистенты</li>
+                <li>Интеграция нейросетей</li>
+            </ul>
+        </section>
+    </main>
+
+    <div id="chat-widget">
+        <div id="chat-header">
+            AI Assistant
+        </div>
+    
+        <div id="chat-messages">
+        </div>
+    
+        <div id="chat-input-area">
+            <input
+                type="text"
+                id="message-input"
+                placeholder="Введите сообщение..."
+            >
+    
+            <button id="send-button">
+                Отправить
+            </button>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='chat.js') }}"></script>    
+
+</body>
+</html>
